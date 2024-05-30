@@ -1,0 +1,55 @@
+.button {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.digit {
+  background-color: whitesmoke;
+  color: black;
+  height: 4rem;
+  font-size: 25pt;
+  border: 1px solid grey;
+}
+
+#equals {
+  grid-row: 2 / span 4;
+  grid-column: 4;
+  background-color: lightsalmon;
+  color: black;
+  font-size: 25pt;
+  border: 1px solid grey;
+}
+
+.display {
+  padding: 4rem 1.6rem;
+  background-color: black;
+  color: white;
+  font-size: 25pt;
+  text-align: right;
+}
+
+.operator {
+  background-color: lightgrey;
+  color: black;
+  height: 4rem;
+  font-size: 25pt;
+  border: 1px solid grey;
+}
+
+.decimal {
+  background-color: whitesmoke;
+  color: black;
+  height: 4rem;
+  font-size: 25pt;
+  border: 1px solid grey;
+}
+
+#clear {
+  font-size: 25pt;
+}
+
+#calculator {
+  width: 460px;
+  height: 540px;
+  margin: 4rem auto;
+}
