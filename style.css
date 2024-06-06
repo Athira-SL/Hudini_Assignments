@@ -1,55 +1,154 @@
-.button {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.digit {
+.todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: whitesmoke;
-  color: black;
-  height: 4rem;
-  font-size: 25pt;
+}
+
+h1 {
+  font-size: 50pt;
+  color: rgb(145, 60, 60);
+  font-family: monospace;
+}
+
+#todo_input {
+  padding: 1rem 4.5rem;
+  font-size: 20pt;
+  text-align: center;
+  font-style: italic;
+  border: 1px solid whitesmoke;
+  outline: none;
+}
+
+#todo_input:hover {
+  border: 1px solid rgb(145, 60, 60);
+  box-shadow: 0 0 6px rgb(145, 60, 60);
+}
+
+::placeholder {
+  font-size: 18pt;
+  font-style: italic;
+  text-align: center;
+  overflow: hidden;
+}
+
+.options {
+  display: flex;
+  gap: 4rem;
+  border: none;
+}
+
+.bts {
+  display: flex;
+  gap: 0.5rem; 
+}
+
+#task_list {
+  font-size: 18pt;
+  overflow: hidden;
+  margin:0;
+}
+
+#all_btn,
+#active_btn,
+#completed_btn,
+#clear_completed {
+  font-size: 12pt;
+  cursor: pointer;
+  background: none;
+  border: 1px solid whitesmoke;
+  border-radius: 0.2rem;
+  outline: none;
+}
+
+#all_btn:hover, #active_btn:hover, #completed_btn:hover, #clear_completed:hover{
+  border: 1px solid rgb(145, 60, 60);
+  box-shadow: 0 0 6px rgb(145, 60, 60);
+  border-radius: 0.2rem;
+  outline: none;
+}
+
+ul li.strike_through {
+  text-decoration: line-through;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+input[type='checkbox'] {
+  /* appearance: none; */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
   border: 1px solid grey;
+  cursor: pointer;
+  accent-color: green;
 }
 
-#equals {
-  grid-row: 2 / span 4;
-  grid-column: 4;
-  background-color: lightsalmon;
-  color: black;
-  font-size: 25pt;
-  border: 1px solid grey;
+.delete-button {
+  display: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: grey;
+  font-size: 18pt;
+  float: right;
 }
 
-.display {
-  padding: 4rem 1.6rem;
-  background-color: black;
-  color: white;
-  font-size: 25pt;
-  text-align: right;
+.delete-button:hover {
+  color: rgb(145, 60, 60);
 }
 
-.operator {
-  background-color: lightgrey;
-  color: black;
-  height: 4rem;
-  font-size: 25pt;
-  border: 1px solid grey;
+li:hover {
+  box-shadow: 0 0 6px rgb(145, 60, 60);
 }
 
-.decimal {
-  background-color: whitesmoke;
-  color: black;
-  height: 4rem;
-  font-size: 25pt;
-  border: 1px solid grey;
+li:hover .delete-button {
+  display: inline-block; /* Show the delete button only when hovering over the task item */
 }
 
-#clear {
-  font-size: 25pt;
+.delete-button:focus {
+  outline: none; /* Remove outline on focus */
 }
 
-#calculator {
-  width: 460px;
-  height: 540px;
-  margin: 4rem auto;
+.container {
+  background-color: white;
+}
+
+#dropdown {
+  cursor: pointer;
+  position: absolute;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  color: grey;
+  font-style: bold;
+  font-size: 18pt;
+}
+
+li {
+  border-bottom: 2px solid whitesmoke;
+}
+
+.selected {
+  border: 1px solid rgb(145, 60, 60);
+  box-shadow: 0 0 6px rgb(145, 60, 60);
+  color: rgb(145, 60, 60);
+}
+
+#todo_input:focus {
+  border: 1px solid rgb(145, 60, 60);
+  box-shadow: 0 0 6px rgb(145, 60, 60);
+  color: rgb(145, 60, 60);
+}
+
+#task_list li {
+  height: 3rem;
+  padding-top: 1rem;
+}
+
+.input {
+  margin: 0;
 }

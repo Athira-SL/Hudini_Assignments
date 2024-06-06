@@ -3,32 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Todo-App</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section id="calculator">
-      <input type="text" name="result" id="screen" class="display" />
-      <section class="button">
-        <button class="operator btn">+</button>
-        <button class="operator btn">-</button>
-        <button class="operator btn">*</button>
-        <button class="operator btn">/</button>
-        <button class="digit btn">7</button>
-        <button class="digit btn">8</button>
-        <button class="digit btn">9</button>
-        <button class="digit btn">4</button>
-        <button class="digit btn">5</button>
-        <button class="digit btn">6</button>
-        <button class="digit btn">1</button>
-        <button class="digit btn">2</button>
-        <button class="digit btn">3</button>
-        <button class="digit btn">0</button>
-        <button class="decimal btn">.</button>
-        <button id="equals">=</button>
-        <button id="clear">AC</button>
-      </section>
-    </section>
-    <script src="script.js" ></script>
+    <div class="todo">
+      <h1>todos</h1>
+      <div class="container">
+        <div class="input">
+          <div id="dropdown" onclick="selectAll()" hidden>v</div>
+          <input
+            type="text"
+            id="todo_input"
+            placeholder="What needs to be done?"
+          />
+        </div>
+        <ul id="task_list"></ul>
+        <!-- </div> -->
+        <div class="options">
+          <div id="items_left" hidden></div>
+          <div class="bts">
+            <button data-filter="all" id="all_btn" onclick="updateFilter('all')" hidden>All</button>
+            <button data-filter="active" id="active_btn" onclick="updateFilter('active')" hidden>Active</button>
+            <button data-filter="completed" id="completed_btn" onclick="updateFilter('completed')" hidden>
+              Completed
+            </button>
+            <div
+              id="clear_completed"
+              onclick="clearCompletedTasks()"
+              hidden
+            >
+              Clear completed
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
