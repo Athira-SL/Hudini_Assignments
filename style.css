@@ -1,154 +1,50 @@
-.todo {
+html {
+  background: #018DED url(http://unsplash.it/1500/1000?image=881&blur);
+  background-size: cover;
+  font-family: 'helvetica neue';
+  text-align: center;
+  font-size: 10px;
+}
+
+body {
+  font-size: 2rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex:1;
+  min-height: 100vh;
   align-items: center;
-  background-color: whitesmoke;
 }
 
-h1 {
-  font-size: 50pt;
-  color: rgb(145, 60, 60);
-  font-family: monospace;
-}
-
-#todo_input {
-  padding: 1rem 4.5rem;
-  font-size: 20pt;
-  text-align: center;
-  font-style: italic;
-  border: 1px solid whitesmoke;
-  outline: none;
-}
-
-#todo_input:hover {
-  border: 1px solid rgb(145, 60, 60);
-  box-shadow: 0 0 6px rgb(145, 60, 60);
-}
-
-::placeholder {
-  font-size: 18pt;
-  font-style: italic;
-  text-align: center;
-  overflow: hidden;
-}
-
-.options {
-  display: flex;
-  gap: 4rem;
-  border: none;
-}
-
-.bts {
-  display: flex;
-  gap: 0.5rem; 
-}
-
-#task_list {
-  font-size: 18pt;
-  overflow: hidden;
-  margin:0;
-}
-
-#all_btn,
-#active_btn,
-#completed_btn,
-#clear_completed {
-  font-size: 12pt;
-  cursor: pointer;
-  background: none;
-  border: 1px solid whitesmoke;
-  border-radius: 0.2rem;
-  outline: none;
-}
-
-#all_btn:hover, #active_btn:hover, #completed_btn:hover, #clear_completed:hover{
-  border: 1px solid rgb(145, 60, 60);
-  box-shadow: 0 0 6px rgb(145, 60, 60);
-  border-radius: 0.2rem;
-  outline: none;
-}
-
-ul li.strike_through {
-  text-decoration: line-through;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-input[type='checkbox'] {
-  /* appearance: none; */
-  width: 20px;
-  height: 20px;
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border: 20px solid white;
   border-radius: 50%;
-  border: 1px solid grey;
-  cursor: pointer;
-  accent-color: green;
+  margin: 50px auto;
+  position: relative;
+  padding: 2rem;
+  box-shadow:
+    0 0 0px 4px rgba(0,0,0,0.1),
+    inset 0 0 0 3px #EFEFEF,
+    inset 0 0 0 10px black,
+    0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.delete-button {
-  display: none;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  color: grey;
-  font-size: 18pt;
-  float: right;
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px);
 }
 
-.delete-button:hover {
-  color: rgb(145, 60, 60);
-}
-
-li:hover {
-  box-shadow: 0 0 6px rgb(145, 60, 60);
-}
-
-li:hover .delete-button {
-  display: inline-block; /* Show the delete button only when hovering over the task item */
-}
-
-.delete-button:focus {
-  outline: none; /* Remove outline on focus */
-}
-
-.container {
-  background-color: white;
-}
-
-#dropdown {
-  cursor: pointer;
+.hand {
+  width: 50%;
+  height: 6px;
+  background: black;
   position: absolute;
-  padding-top: 1rem;
-  padding-left: 2rem;
-  color: grey;
-  font-style: bold;
-  font-size: 18pt;
+  top: 50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
 
-li {
-  border-bottom: 2px solid whitesmoke;
-}
-
-.selected {
-  border: 1px solid rgb(145, 60, 60);
-  box-shadow: 0 0 6px rgb(145, 60, 60);
-  color: rgb(145, 60, 60);
-}
-
-#todo_input:focus {
-  border: 1px solid rgb(145, 60, 60);
-  box-shadow: 0 0 6px rgb(145, 60, 60);
-  color: rgb(145, 60, 60);
-}
-
-#task_list li {
-  height: 3rem;
-  padding-top: 1rem;
-}
-
-.input {
-  margin: 0;
-}

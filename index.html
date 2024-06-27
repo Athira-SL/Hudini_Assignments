@@ -1,44 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo-App</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="todo">
-      <h1>todos</h1>
-      <div class="container">
-        <div class="input">
-          <div id="dropdown" onclick="selectAll()" hidden>v</div>
-          <input
-            type="text"
-            id="todo_input"
-            placeholder="What needs to be done?"
-          />
-        </div>
-        <ul id="task_list"></ul>
-        <!-- </div> -->
-        <div class="options">
-          <div id="items_left" hidden></div>
-          <div class="bts">
-            <button data-filter="all" id="all_btn" onclick="updateFilter('all')" hidden>All</button>
-            <button data-filter="active" id="active_btn" onclick="updateFilter('active')" hidden>Active</button>
-            <button data-filter="completed" id="completed_btn" onclick="updateFilter('completed')" hidden>
-              Completed
-            </button>
-            <div
-              id="clear_completed"
-              onclick="clearCompletedTasks()"
-              hidden
-            >
-              Clear completed
-            </div>
-          </div>
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="clock">
+    <div class="clock-face">
+      <div class="hand hour-hand"></div>
+      <div class="hand minute-hand"></div>
+      <div class="hand second-hand"></div>
     </div>
-    <script src="script.js"></script>
-  </body>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
