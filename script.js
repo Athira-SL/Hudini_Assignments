@@ -1,21 +1,32 @@
-const secondHand = document.querySelector('.second-hand');
-const minuteHand = document.querySelector('.minute-hand');
-const hourHand = document.querySelector('.hour-hand');
+document.addEventListener('DOMContentLoaded', () => 
+  {
+  const screen = document.querySelector('#screen');
+  const buttons = document.querySelectorAll('.btn');
+  const equals = document.querySelector('#equals');
+  const clear = document.querySelector('#clear');
+  screen.value = '0';
 
-function setDate() {
-  const now = new Date();
+  buttons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      const value = event.target.textContent;
+        if(screen.value === '0') {
+          screen.value=value;
+        }
+        else {
+          screen.value += value;
+        }
+    });
+  });
 
-  const seconds = now.getSeconds();
-  const secondDegrees = ((seconds/60)*360)+90;
-  secondHand.style.transform = `rotate(${secondDegrees}deg)`;
+  equals.addEventListener('click', () => {
+    try {
+      screen.value = eval(screen.value);
+    } catch (error) {
+      screen.value = 'Error';
+    }
+  });
 
-  const mins = now.getMinutes();
-  const minsDegrees = ((mins/60)*360)+90;
-  minuteHand.style.transform = `rotate(${minsDegrees}deg)`;
-
-  const hour = now.getHours();
-  const hourDegrees = ((mins/12)*360)+90;
-  hourHand.style.transform = `rotate(${hourDegrees}deg)`;
-}
-
-setInterval(setDate, 1000);
+  clear.addEventListener('click', () => {
+    screen.value = '0';
+  });
+});
