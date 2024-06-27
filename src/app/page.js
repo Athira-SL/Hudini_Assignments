@@ -1,24 +1,78 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+import Pokemon from './Pokemon';
 
-import Nav from './components/nav';
-import Banner from './components/banner';
-import Footer from './components/footer';
-import Feed from './components/feed';
+export default function App() {
+  const [status, setStatus] = useState('empty');
+  const [pokeList, setPokeList] = useState([]);
+  const pokeApi = 'https://pokeapi.co/api/v2/pokemon?limit=30';
 
-<>
-<link href="//fonts.googleapis.com/css?family=Titillium+Web:700|Source+Serif+Pro:400,700|Merriweather+Sans:400,700|Source+Sans+Pro:400,300,600,700,300italic,400italic,600italic,700italic" rel="stylesheet"></link>
+  // async function fetchPokemon(url) {
+  //   setStatus('loading');
+  //   const pokeListArr = await fetch(url)
+  //     .then((data) => data.json())
+  //     .then(({ results }) => {
+  //       return Promise.all(
+  //         results.map((item) => {
+  //           return fetch(item.url)
+  //             .then((response) => response.json())
+  //             .then((pokeResp) => {
+  //               console.log({ pokeResp });
+  //               const { id, name, height, stats, weight, types, sprites } =
+  //                 pokeResp;
 
-</>
+  //               return { id, name, height, stats, weight, types, sprites };
+  //             });
+  //         })
+  //       ).then((pokeData) => pokeData);
+  //     });
 
-export default function Page() {
+  //   setPokeList(pokeListArr);
+  //   setTimeout(() => {
+  //     setStatus('loaded');
+  //   }, 2000);
+  // }
 
-return(
-  <>
-  <Nav/>
-  <Banner/>
-  <Feed/>
-  <Footer/>
-  </>
-);
+  // if (status === 'empty')
+  //   return <button onClick={() => fetchPokemon(pokeApi)}>Fetch Pokemon</button>;
+  useEffect(() => {
+    async function fetchPokemon(url) {
+      setStatus('loading');
+      const pokeListArr = await fetch(url)
+        .then((data) => data.json())
+        .then(({ results }) => {
+          return Promise.all(
+            results.map((item) => {
+              return fetch(item.url)
+                .then((response) => response.json())
+                .then((pokeResp) => {
+                  console.log({ pokeResp });
+                  const { id, name, height, stats, weight, types, sprites } =
+                    pokeResp;
+
+                  return { id, name, height, stats, weight, types, sprites };
+                });
+            })
+          ).then((pokeData) => pokeData);
+        });
+      setPokeList(pokeListArr);
+      setStatus('loaded');
+    }
+    fetchPokemon(pokeApi);
+  }, []);
+
+  if (status === 'loading') return <div className="pokemon-loader"></div>;
+
+  return (
+    status === 'loaded' && (
+      <ul className="poke-list">
+        {pokeList.map((pokemon) => {
+          const { id } = pokemon;
+
+          return <Pokemon key={id} pokemon={pokemon} />;
+        })}
+      </ul>
+    )
+  );
 }

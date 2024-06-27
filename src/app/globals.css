@@ -1,713 +1,83 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Trebuchet MS', sans-serif;
+  height: 95vh;
+  background: #fcf7e6;
 }
 
-.navigation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 6rem;
+div#root {
+  height: 100%;
 }
 
-.navigation .text {
-  font-size: 1.4rem;
-  font-weight: 900;
-  font-style: normal;
-}
-
-.navigation .container ul {
-  display: flex;
-  justify-content: space-between;
-  width: 12rem;
-}
-
-.navigation .container li {
-  color: black;
-}
-
-.home {
-  color: #373a3c;
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-.banner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #5cb85c;
-  color: #fff;
-  height: 12rem;
-}
-
-.banner h1,
-.banner p {
-  height: fit-content;
-  margin: 0;
-  padding: 0;
-}
-
-.banner h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-}
-
-.banner p {
-  margin-top: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.text,
-.text1,
-.text2 {
-  color: #5cb85c;
-}
-
-.sign_in,
-.sign_up {
-  color: lightgrey;
-}
-
-.sign_in:hover,
-.sign_up:hover {
-  color: rgba(0, 0, 0, 0.6);
-}
-
-.container {
-  display: flex;
-  padding: 0 6rem;
-}
-
-.container .feed_toggle {
-  width: 100%;
-  margin-top: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 0.1rem solid lightgray;
-}
-
-.container .feed_toggle .global_text {
-  font-weight: 400;
-  color: #5cb85c;
-  padding-bottom: 0.5rem;
-  border-bottom: 0.15rem solid #5cb85c;
-}
-
-.container .articles {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-}
-
-.articles .article_list {
-  padding-bottom: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 0.1rem solid lightgray;
-}
-
-.article_list .article_head {
-  display: flex;
-  justify-content: space-between;
-}
-
-.article_title {
-  color: #373a3c;
-}
-
-.article_list .article_subhead {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.article_list .article_subhead img {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  margin-right: 0.5rem;
-}
-
-.article_list .article_subhead .article_info {
-  display: flex;
-  flex-direction: column;
-}
-
-.article_info .article_author {
-  color: #5cb85c;
-}
-
-.article_info .article_date {
-  color: lightgray;
-  font-size: 0.7rem;
-}
-
-.count_btn {
-  color: #5cb85c;
-  background-color: transparent;
-  border: 1px solid #5cb85c;
-  border-radius: 0.2rem;
-  padding: 0.1rem 0.4rem;
-  cursor: pointer;
-}
-
-.count_btn:hover {
-  color: #fff;
-  background-color: #5cb85c;
-}
-
-.count_btn span {
-  margin-right: 0.4rem;
-}
-
-.article_title {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.article_desc {
-  color: darkgray;
-  font-weight: 300;
-}
-
-.article_buttons {
-  display: flex;
-  padding: 0;
-  justify-content: flex-end;
-}
-
-.article_buttons li {
-  margin-left: 0.3rem;
-}
-
-.column1 {
-  width: 75%;
-}
-
-.column2 {
-  padding: 0 0.4rem 1rem 0.4rem;
-  margin-top: 1rem;
-  margin-left: 1rem;
-  background: rgb(233, 232, 232);
-  border-radius: 0.5rem;
-  height: fit-content;
-  width: 25%;
-}
-
-.tag_text {
-  font-size: 1rem;
-  padding-left: 0.2rem;
-}
-
-.tags {
+.poke-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
+  padding: 20px 0;
 }
 
-.popular_tags {
-  border: none;
-  border-radius: 1rem;
-  color: #fff;
-  background-color: gray;
-  padding: 0.2rem 0.4rem;
-  width: fit-content;
-  margin-right: 0.2rem;
-  margin-bottom: 0.2rem;
-  font-size: 0.8rem;
-  cursor: pointer;
+.poke-item {
+  list-style-type: none;
+  border-radius: 20px;
+  padding: 15px 10px;
+  margin: 10px;
+  color: white;
+  background: lightcoral;
 }
 
-.tag_btn {
-  background-color: transparent;
-  border: 1px solid lightgrey;
-  border-radius: 1rem;
-  color: lightgrey;
-  cursor: pointer;
+.poke-type {
+  background: orange;
+  border-radius: 6px;
+  margin-right: 5px;
+  padding: 6px;
+  color: brown;
 }
 
 h2 {
-  text-align: center;
+  text-transform: Capitalize;
 }
 
-.signin_para,
-.signup_para {
-  text-align: center;
-  font-size: 1rem;
-  color: #5cb85c;
-  list-style: none;
-}
-
-.button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.input-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.input-text {
-  padding: 1rem 8rem 1rem 1rem;
-  border-radius: 0.5rem;
-  outline: none;
-  border: 1px solid lightgray;
-  font-size: 1rem;
-}
-
-.reg_btn {
-  background-color: #5cb85c;
-  outline: none;
-  border: 1px solid lightgray;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  margin-left: 14rem;
-  color: #fff;
-  cursor: pointer;
-}
-
-.footer_content {
-  background-color: #f3f3f3;
-  padding: 2rem;
-  width: 100%;
-  font-size: 0.8rem;
-}
-
-.text2 {
-  font-size: 0.8rem;
-}
-
-.signup_para:hover,
-.signin_para:hover {
-  text-decoration: underline;
-}
-
-.sign_in:active,
-.sign_up:active {
-  color: black;
-}
-
-footer {
-  display: flex;
-  /* padding: 2rem; */
-  gap: 1rem;
-  background-color: #fff;
-  margin-top: 8rem;
-  color: lightgrey;
-}
-
-.article_btn {
-  display: flex;
-  padding: 0;
-  justify-content: flex-start;
-}
-
-.article_btn li {
-  margin-left: 0.3rem;
-}
-
-.blog_container {
-  padding: 2rem;
-}
-
-.blog_description {
-  font-family: source sans pro, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #373a3c;
-}
-
-.blog_details {
-  color: #fff;
-  background: #333;
-  padding: 2rem;
-  margin-bottom: 2rem;
-}
-
-.blog_title {
-  font-size: 2.8rem;
-  font-weight: 600;
-  font-family: inherit;
-}
-
-.filter_btns {
-  margin-right: 28rem;
-  margin-top: 1rem;
-}
-
-.follow_btn {
-  background-color: transparent;
-  color: #ccc;
-  border: 1px solid #ccc;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
-  border-radius: 0.2rem;
-  cursor: pointer;
-}
-
-.follow_btn:hover {
-  color: #fff;
-  background-color: #ccc;
-  border-color: #ccc;
-}
-
-.post_btn {
-  background-color: transparent;
-  color: #ccc;
-  border: 1px solid #5cb85c;
-  background-color: #5cb85c;
-  padding: 0.25rem 0.25rem;
-  font-size: 0.875rem;
-  border-radius: 0.2rem;
-  margin-left: 1rem;
-  cursor: pointer;
-}
-
-.post_btn:hover {
-  color: #fff;
-}
-
-.blog_subhead {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.blog_subhead img {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  margin-right: 0.5rem;
-}
-
-.blog_info {
-  display: flex;
-  flex-direction: column;
-}
-
-.blog_head {
-  display: flex;
-  justify-content: space-between;
-}
-
-.blog_date {
-  color: lightgray;
-  font-size: 0.7rem;
-  margin-top: -1rem;
-}
-
-.blog_author {
-  font-family: source sans pro, sans-serif;
-  font-size: 1rem;
-}
-
-.spinner {
-  display: flex;
-}
-
-.pagination {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.page_btn {
-  color: #5cb85c;
+.pokemon-loader {
   position: relative;
-  float: left;
-  padding: 0.5rem 0.75rem;
-  margin-left: -1px;
-  text-decoration: none;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.page_btn:hover {
-  background-color: #ddd;
-  text-decoration: underline;
-}
-
-.read_more {
-  margin-top: 2rem;
-  max-width: 30%;
-  font-size: 0.8rem;
-  font-weight: 300;
-  color: #bbb;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
-.container .feed_toggle .selected_tag {
-  background: #fff;
-  font-weight: 400;
-  color: #5cb85c;
-  padding-bottom: 0.5rem;
-  /* border-bottom: 0.15rem solid #5cb85c; */
-  padding-left: 1rem;
-}
-
-.popular_tags:active {
-  text-decoration: underline;
-  padding-left: 1rem;
-}
-
-.article_author:hover {
-  text-decoration: underline;
-  color: green;
-}
-
-.profileContent {
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  background: #f3f3f3;
-}
-
-.profileContent img {
-  width: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 100px;
-  border-radius: 100px;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
-
-.profile-username {
-  font-size: 1.5rem;
-}
-
-.follow_btn1 {
-  color: #999;
-  border: 1px solid #999;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
-  border-radius: 0.2rem;
-  margin-left: 24rem;
-  background-color: #fff;
-  margin-bottom: 1rem;
-}
-
-.dp-head {
-  display: flex;
-  flex-direction: column;
-}
-
-.linkDecoration img {
-  width: 2rem;
-  height: 2rem;
+  width: 100px;
+  background: linear-gradient(to bottom, rgb(254, 0, 1) 50%, white 50%);
   border-radius: 50%;
-  margin-right: 0.5rem;
+  border: 8px solid black;
+  animation: spin 1s linear infinite;
 }
 
-.profiles {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.pokemon-loader::before {
+  content: '';
+  position: absolute;
+  height: 8px;
+  width: 100px;
+  background: black;
+  top: 50px;
+  transform: translatey(-50%);
 }
 
-.small-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.btn {
-  border: none;
-  color: #5cb85c;
-  background-color: transparent;
-  border: 1px solid #5cb85c;
-  border-radius: 0.2rem;
-  padding: 0.1rem 0.4rem;
-  cursor: pointer;
-  background-color: #5cb85c;
-  float: right;
-  margin-right: 4rem;
-}
-
-.like_btn {
-  color: #fff;
-}
-
-.createdAt {
-  color: lightgray;
-  font-size: 0.7rem;
-  margin-top: -1rem;
-}
-
-.author .author-link {
-  color: #5cb85c;
-}
-
-.article_title {
-  color: #373a3c;
-}
-
-.title {
-  color: #373a3c;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.desc {
-  color: darkgray;
-  font-weight: 300;
-}
-
-.read-more {
-  max-width: 30%;
-  font-size: 0.8rem;
-  font-weight: 300;
-  color: #bbb;
-  vertical-align: middle;
-  cursor: pointer;
-  border: none;
-}
-
-.footTag {
-  display: flex;
-  justify-content: space-between;
-  margin-right: 4rem;
-}
-
-.tag-in-article {
-  background-color: transparent;
-  border: 1px solid lightgrey;
-  border-radius: 1rem;
-  color: lightgrey;
-  cursor: pointer;
-  margin-left: 0.3rem;
-}
-
-.filtered_articles {
-  padding-bottom: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 0.1rem solid lightgray;
-}
-
-.blog_subhead img {
-  width: 2rem;
-  height: 2rem;
+.pokemon-loader::after {
+  content: '';
+  position: absolute;
+  height: 38px;
+  width: 38px;
   border-radius: 50%;
-  margin-right: 0.5rem;
+  background: white;
+  top: 50px;
+  left: 50px;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 0 8px black, inset 0 0 0 10px white,
+    inset 0 0 0 12px black;
 }
 
-.profile_spinner,
-.globalfeed_spinner,
-.slug_spinner {
-  display: flex;
-  justify-content: center;
-}
-
-.profile_text {
-  font-weight: 400;
-  color: #5cb85c;
-  padding-bottom: 0.5rem;
-  border-bottom: 0.15rem solid #5cb85c;
-  /* padding-left: 2rem; */
-  margin-left: 3rem;
-}
-
-.allProfile {
-  width: 75%;
-}
-
-.article_toggle {
-  width: 100%;
-  margin-top: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 0.1rem solid lightgray;
-}
-
-.profile_container {
-  display: flex;
-  padding: 0.6rem;
-}
-
-.new_nav {
-  display: flex;
-  gap: 1rem;
-  margin-left: 1rem;
-  color: rgba(0, 0, 0, 0.3);
-  width: 12rem;
-}
-
-.newArticles,
-.settings,
-.new_profile {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.article-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-.article-text1,
-.article-about,
-.article-markdown,
-.article-tags {
-  color: #55595c;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
-  padding: 1rem;
-  width: 50%;
-}
-
-.article-markdown {
-  padding-bottom: 10rem;
-  font-size: 1rem;
-}
-
-.publish_btn {
-  background-color: transparent;
-  color: #fff;
-  background-color: #449d44;
-  border-color: #419641;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 1.25rem;
-  border-radius: 0.3rem;
-  margin-left: 23rem;
-  cursor: pointer;
-}
-
-.logout-btn {
-    color: #b85c5c;
-    background-image: none;
-    background-color: transparent;
-    border: none;
-    border: 1px solid #b85c5c;
-    border-radius: 0.3rem;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.25rem;
-    margin: 10rem 20rem 10rem 20rem;
-    cursor: pointer;
-}
-
-.logout-btn:hover {
-  background-color: #b85c5c;
-  color: #fff;
+/* Spin Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
